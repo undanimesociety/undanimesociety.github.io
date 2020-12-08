@@ -1,0 +1,90 @@
+body 
+{
+	color : #FFFFFF;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 16pt;
+	font-family: Courier New, serif;
+	background-color: #1D7652;
+	background-image: url("../greenmarble.gif");
+	text-align: center;
+}
+
+a
+{
+	color: #88E7BD;
+}
+
+a:visited
+{
+	color: #00FFFF;
+}
+
+img
+{
+	border: none;
+}
+
+table
+{
+	border: none;
+}
+
+p
+{
+	color : #FFFFFF;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 16pt;
+	font-family: Times New Roman, serif;
+}
+
+h1
+{
+	color: #88E1BD;
+	bgcolor: #186144;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 18pt;
+	font-family: Times New Roman, serif;
+}
+
+h2
+{
+	color: #FFFFFF;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 17pt;
+	font-family: Times New Roman, serif;
+}
+
+h3
+{
+	color: #FFFFFF;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 10pt;
+	font-family: arial, sans-serif;
+}
+
+h4
+{
+	color: #88E7BD;
+	font-weight: bold;
+	font-style: 16pt;
+	font-family: Times New Roman, serif;
+}
+
+table.content
+{
+	width: 762px;
+	background-color: #1D7652;
+	text-align: center;
+	position: relative;
+}
+
+table.menu
+{
+	width: 160px;
+	border: 1px solid #186144;
+}
