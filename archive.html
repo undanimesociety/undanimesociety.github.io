@@ -39,27 +39,22 @@ h2
 }
 .h2 {
 	margin-top:10px;
-	padding-top:20px;
 }
 .h2 h2{
 	margin:0px;
+	padding-top:20px;
 	border-bottom:1px solid gray;
 }
 .h2:hover {
 	background-color:#1D8060;
-}
-/* For use in slide down/up collapsible sections
-	instead of using display = "none"/"block"
-	every .h2 p tag visible with max-height: 0
-	create 2nd toggle function
-		if elem.style.maxHeight ? elem.style.maxHeight = null : elem.style.maxHeight = elem.scrollHeight + "px";
-		syntax [boolean] ? [true] : [false];
-	
+}	
 .h2 p{ 
+	display: block;
+	margin: 0;
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 0.2s ease-out;
-}*/
+}
 h3
 {
 	color: #FFFFFF;
@@ -294,43 +289,31 @@ div#headerRight {
 		var prev = [];
 
 		function tog(parent) {
-			//console.log(parent.style.display);
-			var p = parent.getElementsByTagName("p")[0];
-			//console.log(p.style.display);
+			var p = parent.nextElementSibling;
+
 			//use window.getComputedStyle(elem).getPropertyValue('display')
 			//  ex: window.getComputedStyle(elem).getPropertyValue('display') == "none"
 			//for handling multiple styles
 			//elem.style.[style] only returns styles set previously in js code
-			if(p.style.display=="none"){
-				if(prev.length==2){
-					prev[0].style.display = "none";
-					prev[0]=prev.pop();
-				}
-				prev.push(p);
-				p.style.display = "block";	
+			if (p.style.maxHeight) {
+				p.style.maxHeight = null;
 			}
-			else if(p.style.display=="block"){
-				if(prev.length == 0){ alert("You have been caught messing with the css.");}
-				else if(prev.length == 1){ prev.pop();}// the last one, prev[0], would currently be block
-				else if(prev.length == 2){
-					if(p==prev[0]){ prev[0]=prev.pop();}//if the prev was clicked replace current with past one
-					else if(p==prev[1]){prev.pop();}//if the most recent was just clicked pop it
-				}//one of the two was just closed : ___;
-				p.style.display = "none";
+			else {
+				p.style.maxHeight = p.scrollHeight + "px";
 			}
-			console.log('prev[0]: '+(prev[0] ? prev[0] : null) +'\nprev[1]: '+ (prev[1] ? prev[1] : null));
 		};
+		
 
 		//get array of news p tags
 		for (var i = 0;i<parents.length;i++){
 			news.push(parents[i].getElementsByTagName("p")[0]);
 		}
 		for (var i = 0;i<parents.length;i++){
-			news[i].style.display="none";
-			parents[i].onclick = function() {tog(this)};
+			//news[i].style.display="none";
+			parents[i].getElementsByTagName('h2')[0].onclick = function() {tog(this)};
 		}
-		news[0].style.display="block";
-		news[1].style.display="block";
-		prev.push(news[0],news[1]);
+		news[0].style.maxHeight = news[0].scrollHeight + "px";
+		//news[1].style.display="block";
+		//prev.push(news[0],news[1]);
 	</script>
 </html>
