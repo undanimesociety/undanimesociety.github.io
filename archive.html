@@ -45,7 +45,7 @@ h2
 	padding-top:20px;
 	border-bottom:1px solid gray;
 }
-.h2:hover {
+.h2 h2:hover {
 	background-color:#1D8060;
 }	
 .h2 p{ 
@@ -67,7 +67,7 @@ h4
 {
 	color: #88E7BD;
 	font-weight: bold;
-	font-style: 16pt;
+	font-size: 16pt;
 	font-family: Times New Roman, serif;
 }
 a, u
@@ -87,13 +87,12 @@ body {
 	background-color: #1D7652;
 	background-image:url("greenmarble.gif");
 	text-align: center;
+	margin:8px 20px;
+	min-width:810px;
 }
 div.content {
-	width:762px;
-	min-height:1085px;
+	width:760px;
 	background-color:#1d7652;
-	text-align:center;
-	position:relative;
 	margin-top:8px;
 	margin-left:auto;
 	margin-right:auto;
@@ -104,14 +103,17 @@ div.content {
 div#headerLeft {
 	width:600px;
 	display:inline-block;
+	vertical-align:top;
 }
 #main {
-	width:585px;
+	width:575px;
 }
 
 /* ======== Right Column CSS ======== */
 #rightCol {
-	float:right;
+	width:160px;
+	display:inline-block;
+	vertical-align:top;
 }
 div#headerRight {
 	width:160px;
@@ -119,7 +121,7 @@ div#headerRight {
 #navBar {
 	margin:0px;
 	padding:0px;
-	width: 160px;
+	width: 158px;
 	border: 1px solid #186144;
 	list-style-type:none;
 }
@@ -252,11 +254,8 @@ div#headerRight {
 					</div>
 				</div>
 				<!--    End of Main Content    -->
-			</div>
-			<div id="rightCol" width="160">
-				<div id="headerRight">
-					<img width="160" height="340" alt="Misato and Pen pen" src="logob1.gif" />
-				</div>
+			</div><div id="rightCol" width="160">
+				<img width="160" height="340" alt="Misato and Pen pen" src="logob1.gif" />
 				
 				<!--    Nav Box    -->
 				<div width="160">
@@ -301,6 +300,27 @@ div#headerRight {
 			else {
 				p.style.maxHeight = p.scrollHeight + "px";
 			}
+			
+			/*
+				if(p.style.display=="none"){
+					if(prev.length==2){
+						prev[0].style.display = "none";
+						prev[0]=prev.pop();
+					}
+					prev.push(p);
+					p.style.display = "block";	
+				}			
+				else if(p.style.display=="block"){
+					if(prev.length == 0){ alert("You have been caught messing with the css.");}
+					else if(prev.length == 1){ prev.pop();}// the last one, prev[0], would currently be block
+					else if(prev.length == 2){
+						if(p==prev[0]){ prev[0]=prev.pop();}//if the prev was clicked replace current with past one
+						else if(p==prev[1]){prev.pop();}//if the most recent was just clicked pop it
+					}//one of the two was just closed : ___;
+					p.style.display = "none";
+				}
+			*/
+			//console.log('prev[0]: '+(prev[0] ? prev[0] : null) +'\nprev[1]: '+ (prev[1] ? prev[1] : null));
 		};
 		
 
