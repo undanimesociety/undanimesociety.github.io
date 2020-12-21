@@ -47,7 +47,7 @@ h4
 {
 	color: #88E7BD;
 	font-weight: bold;
-	font-style: 16pt;
+	font-size: 16pt;
 	font-family: Times New Roman, serif;
 }
 a, u
@@ -67,13 +67,12 @@ body {
 	background-color: #1D7652;
 	background-image:url("greenmarble.gif");
 	text-align: center;
+	margin:8px 20px;
+	min-width:810px;
 }
 div.content {
-	width:762px;
-	min-height:1085px;
+	width:760px;
 	background-color:#1d7652;
-	text-align:center;
-	position:relative;
 	margin-top:8px;
 	margin-left:auto;
 	margin-right:auto;
@@ -84,6 +83,7 @@ div.content {
 div#headerLeft {
 	width:600px;
 	display:inline-block;
+	vertical-align:top;
 }
 #main {
 	width:575px;
@@ -91,15 +91,14 @@ div#headerLeft {
 
 /* ======== Right Column CSS ======== */
 #rightCol {
-	float:right;
-}
-div#headerRight {
 	width:160px;
+	display:inline-block;
+	vertical-align:top;
 }
 #navBar {
 	margin:0px;
 	padding:0px;
-	width: 160px;
+	width: 158px;
 	border: 1px solid #186144;
 	list-style-type:none;
 }
@@ -117,8 +116,8 @@ div#headerRight {
 }
 #footer {
 	display:block;
-	margin:auto;
-	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
 	margin-top:30px;
 }
 #footer h5 {
@@ -147,8 +146,8 @@ div#headerRight {
 					
 					<h1>News</h1>
 					<!-- Only the single most recent news event -->
-					<!-- Move the previous to Old News -->
-					<div id="12_20">
+					<!-- Move the rest to Old News as a collapseable list -->
+					<div id="5_07">
 						<h2>12/8/20</h2>
 						<p>This site is once again back online thanks to github and is currently undergoing reconstruction 
 						and updating.</p>
@@ -163,11 +162,9 @@ div#headerRight {
 					
 					<h1>Other Clubs in the area:</h1>
 					<p>
-						<strike>
 						<a href="" id="http://s6.invisionfree.com/Minot_Anime_Club/" rel="nofollow">
 							<u> The Minot Anime Club</u>
 						</a>
-						</strike>
 					</p>
 					
 					<br />
@@ -179,8 +176,7 @@ div#headerRight {
 						<font size="2">After much delay, the website is back to being maintained and should be a bit more up to date. Some sections are going to be redone, please be patient.			</font>	
 					</div>
 				</div>
-			</div>
-			<div id="rightCol" width="160">
+			</div><div id="rightCol" width="160">
 				<div id="headerRight">
 					<img width="160" height="340" alt="Misato and Pen pen" src="logob1.gif" />
 				</div>
