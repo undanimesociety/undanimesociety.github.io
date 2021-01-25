@@ -252,14 +252,14 @@ div#headerLeft {
 		var site ="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=";
 		for (var x=0;x<hist.length;x++){
 			div = document.createElement("div");
-			div.innerHTML="<div class='yr'>("+hist[x][0]+") "+hist[x][1]+" Semester:</div>";
+			div.className="yr";
+			div.innerHTML="("+hist[x][0]+") "+hist[x][1]+" Semester:";
 			main.appendChild(div);
 			div = document.createElement("div");
-			div.innerHTML="<div><br />";
+			div.innerHTML="<br />";
 			for(var i=3;i<10&&hist[x].length>5;i+=2){
 				div.innerHTML+="<a href='"+site+hist[x][i-1]+"' rel='nofollor'>"+hist[x][i]+"</a><br />";
 			}
-			div.innerHTML+="</div>";
 			main.appendChild(div);
 		}
 		
