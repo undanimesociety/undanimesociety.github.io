@@ -261,6 +261,7 @@ div#headerLeft {
 			div.innerHTML="<br />";
 			for(var i=2;i<11&&hist[x].length>5;i+=2){
 				div.innerHTML+="<a href='"+site+hist[x][i]+"' rel='nofollor'>"+hist[x][i+1]+"</a><br />";
+				console.log(hist[x][i]+': '+hist[x][i+1];
 			}
 			main.appendChild(div);
 		}
