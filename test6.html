@@ -259,8 +259,8 @@ div#headerLeft {
 			main.appendChild(div);
 			div = document.createElement("div");
 			div.innerHTML="<br />";
-			for(var i=3;i<10&&hist[x].length>5;i+=2){
-				div.innerHTML+="<a href='"+site+hist[x][i-1]+"' rel='nofollor'>"+hist[x][i]+"</a><br />";
+			for(var i=2;i<11&&hist[x].length>5;i+=2){
+				div.innerHTML+="<a href='"+site+hist[x][i]+"' rel='nofollor'>"+hist[x][i+1]+"</a><br />";
 			}
 			main.appendChild(div);
 		}
