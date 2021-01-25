@@ -231,13 +231,14 @@ div#headerLeft {
 				wrd="";
 			}
 			else if(file[x]=='\n'){
-				hist.push(wrd);
-				wrd=[];
+				hist.push(year);
+				year=[];
 			}
 			else{
 				wrd += file[x];
 			}
 		}
+		console.log(hist.length, hist[0].length);
 		
 		
 		
