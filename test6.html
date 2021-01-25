@@ -132,8 +132,7 @@ div#headerLeft {
 	font-size:16px;
 	font-family: Times New Roman;
 }
-.yr+div a {
-	display:block;
+.yr+div>div {
 	margin: 0 0 6px 0;
 }
 /* ======== Right Column CSS ======== */
@@ -274,7 +273,7 @@ div#headerLeft {
 			div = document.createElement("div");
 			div.innerHTML="<br />";
 			for(var i=2;i<hist[x].length&&hist[x].length>5;i+=2){
-				div.innerHTML+="<a href='"+site+hist[x][i]+"' rel='nofollow' target='_blank'>"+hist[x][i+1]+"</a>";
+				div.innerHTML+="<div><a href='"+site+hist[x][i]+"' rel='nofollow' target='_blank'>"+hist[x][i+1]+"</a></div>";
 				console.log(hist[x][i]+': '+hist[x][i+1]);
 			}
 			main.appendChild(div);
