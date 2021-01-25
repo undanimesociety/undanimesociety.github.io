@@ -114,6 +114,14 @@ div#headerLeft {
 .sh {
 	text-align: left;
 }
+.yr {
+	width:140px;
+	height:140px;
+}
+.yr+div {
+	width:360px;
+	height:140px;
+}
 /* ======== Right Column CSS ======== */
 #rightCol {
 	width:260px;
@@ -205,9 +213,9 @@ div#headerLeft {
 		</div>
 	</body>
 	<script>
-		var main = document.getElementById("main");
+		var div,main = document.getElementById("main");
 		var date = new Date();
-		var p = document.createElement("P");
+		var p = document.createElement("p");
 		var yrs = (date.getMonth() < 7) ? date.getFullYear()-1 : date.getFullYear();
 		p.innerHTML="All showings are for the " + (yrs-1) + "-" 
 			+ yrs + " academic year.<br /><br />";
@@ -225,7 +233,7 @@ div#headerLeft {
 		});
 		
 		var hist=[],year=[],wrd="";
-		for (var x=0;x < file.length; x++){
+		for (var x=0,n=0;x < file.length||n<2; x++){
 			if(file[x]==','){	
 				year.push(wrd);
 				wrd="";
@@ -233,13 +241,27 @@ div#headerLeft {
 			else if(file[x]=='\n'){
 				hist.push(year);
 				year=[];
+				n++;
 			}
 			else{
 				wrd += file[x];
 			}
 		}
-		console.log(hist.length, hist[0].length);
-		
+		//For now, only pulling latest 2 years (n<2).
+		//Can create collapsible list of later years using this method.
+		var site ="https://www.animenewsnetwork.com/encyclopedia/anime.php?id=";
+		for (var x=0;x<hist.length;x++){
+			div = document.createElement("div");
+			div.innerHTML="<div class='yr'>("+hist[x][0]+") "+hist[x][1]+" Semester:</div>";
+			main.appendChild(div);
+			div = document.createElement("div");
+			div.innerHTML="<div><br />";
+			for(var i=3;i<10&&hist[x].length>5;i+=2){
+				div.innerHTML+="<a href='"+site+hist[x][i-1]+"' rel='nofollor'>"+hist[x][i]+"</a><br />";
+			}
+			div.innerHTML+="</div>";
+			main.appendChild(div);
+		}
 		
 		
 	</script>
