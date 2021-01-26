@@ -58,6 +58,11 @@ a:visited
 {
 	color: #00FFFF;
 }
+html {
+	min-width:850px;
+	/* height:100%; */
+	display:block;
+}
 body {
 	color : #FFFFFF;
 	font-weight: bold;
@@ -69,26 +74,61 @@ body {
 	text-align: center;
 	margin:8px 20px;
 	min-width:810px;
+	/* height:98%; */
 }
 div.content {
 	width:760px;
+	height:94%;
 	background-color:#1d7652;
-	margin-top:8px;
+	margin: 8px auto;
+	/*margin-top:8px;
 	margin-left:auto;
-	margin-right:auto;
+	margin-right:auto;*/
 	padding:25px
 }
 
+div.content div#newNews {
+	padding-top:250px;
+}
 /* ======== Left Column CSS ======== */
 div#headerLeft {
 	width:600px;
+	height:100%;
 	display:inline-block;
 	vertical-align:top;
 }
 #main {
 	width:575px;
 }
-
+.link div div hr+h3{
+	margin:0 0 8px 0;
+	padding:8px 0;
+	background-color:#186144;
+}
+.sh {
+	text-align: left;
+}
+.yr {
+	width:130px;
+	height:140px;
+	display:inline-block;
+	vertical-align:top; /* default appears to be middle */
+	
+	font-size:17px;
+	font-family: Times New Roman;
+}
+.yr+div {
+	width:370px;
+	height:140px;
+	display:inline-block;
+	
+	color:rgb(8,231,208);
+	font-size:16px;
+	font-family: Times New Roman;
+}
+.yr+div>div {
+	margin: 0 0 6px 0;
+}
 /* ======== Right Column CSS ======== */
 #rightCol {
 	width:160px;
@@ -101,6 +141,9 @@ div#headerLeft {
 	width: 158px;
 	border: 1px solid #186144;
 	list-style-type:none;
+}
+.link div div ul li {
+	border: 1px solid #FFFFFF;
 }
 #navBar li h2 {
 	margin: 18px 0px;
@@ -118,7 +161,8 @@ div#headerLeft {
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
-	margin-top:30px;
+	margin-top:25px;
+	/* min-height:30px; */
 }
 #footer h5 {
 	margin:0px;
