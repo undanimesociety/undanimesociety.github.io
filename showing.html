@@ -229,7 +229,7 @@ div#headerLeft {
 		var div,main = document.getElementById("main");
 		var date = new Date();
 		var p = document.createElement("p");
-		var yrs = (date.getMonth() < 7) ? date.getFullYear()-1 : date.getFullYear();
+		var yrs = (date.getMonth() < 7) ? date.getFullYear() : date.getFullYear()+1;
 		p.innerHTML="All showings are for the " + (yrs-1) + "-" 
 			+ yrs + " academic year.<br /><br />";
 		main.appendChild(p);
