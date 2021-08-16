@@ -8,4 +8,4 @@ You can either run the .sh script in a bash shell or run the \*.exe.bat which ru
 - For example: *bobobo* will return *Bobobo-bo Bo-bobo*, but *bobo* will return the alias *Bo-Bobo*<br />
 
 Feel free to make changes to the titles if you cannot get the one you expect.<br />
-Always double check the links in the [showing.html](undanimesociety.github.io) page to make sure they redirect to the proper AnimeNewsNetwork (ANN) page.
+Always double check the links in the [showing.html](https://www.undanimesociety.github.io) page to make sure they redirect to the proper AnimeNewsNetwork (ANN) page.
