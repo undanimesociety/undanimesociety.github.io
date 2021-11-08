@@ -3,6 +3,9 @@ HOWTO:
 <br />
 
 TODO:
+- Attempt update of jQuery to remove developer console warning.
+  - If this does not work, find alternate request method to get csv files.
+- Update/create scripts to generate newsHist.csv lines.
 - Dynamically pull first news item into What's New page (news.html)
 - add/make sure a non-dynamic announcement section is present in news.html
 - centralize common CSS styles
