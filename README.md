@@ -1,4 +1,5 @@
-Update showings by adding to the top of AniHist.csv
+HOWTO:
+- Update showings by adding to the top of AniHist.csv
 
 TODO:
 - convert old news (archive.html) into similar format as showing.html for dynamically loaded content
