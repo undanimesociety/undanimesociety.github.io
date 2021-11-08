@@ -197,7 +197,7 @@ div#headerLeft {
 					<h1>
 						Older News:
 					</h1>
-					<div class="h2">
+					<!--<div class="h2">
 						<h2>5/16/07:</h2>
 						<p>Anime Society will be holding screening this summer every other Wednesday starting May 16, 2007. 
 						Come in from the summer heat and mosquitoes and enjoy some anime. 
@@ -291,7 +291,7 @@ div#headerLeft {
 							The contact information has been updated as well.  Any questions, concerns, or comments can now be sent to <br><a href="mailto:und.anime@gmail.com">und.anime@gmail.com</a>.
 							<br>
 						</p>
-					</div>
+					</div>-->
 				</div>
 				<!--    End of Main Content    -->
 			</div><div id="rightCol" width="160">
@@ -322,6 +322,57 @@ div#headerLeft {
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript">
+//var div,main = document.getElementById("main");
+var main = document.getElementById("main");
+var div;// = document.createElement("div");
+
+var file;
+$.ajax({
+	url: "newsHist.csv",
+	async: false,
+	cache: false,
+	dataType: "text",
+	success: function (data, textStatus, jqXHR) {
+		file = data;
+	}
+});
+
+var list=[],news=[],wrd="";
+//x is line, n is \n
+//stop after 2nd to last line is processed
+//build each news element, then add elements to list (top of the file will be the top of the webpage)
+for (var x=0,n=0;x < file.length&&n<2;x++){
+	if(file[x]=='`'){
+		news.push(wrd);
+		wrd="";
+	}
+	else if(file[x]=='\n'){
+		news.push(wrd);
+		list.push(news);
+		news=[];
+		wrd="";
+		n++;
+	}
+	else if(file[x]=='|'){
+		wrd += "<br />";
+	}
+	else{
+		wrd += file[x];
+	}
+}
+
+
+//start at 1 (0 is to appear on index.html)
+for (var x=1;x<list.length;x++){
+	div = document.createElement("div");
+	div.className="h2";
+	div.innerHTML="<h2>"+list[x][0]+"</h2>";
+	div.innerHTML+="<p>"+list[x][1]+"</p>";
+	main.appendChild(div);
+}
+	</script>
+	
 	<script type="text/javascript">
 		var parents = document.getElementsByClassName("h2");
 		var news = [];
