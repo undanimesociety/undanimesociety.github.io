@@ -10,6 +10,7 @@ TODO:
       Deprecation Notice: The jqXHR.success(), jqXHR.error(), and jqXHR.complete() callbacks are removed as 
       of jQuery 3.0. You can use jqXHR.done(), jqXHR.fail(), and jqXHR.always() instead.
       ```
+- Add templates for current available webpages.
 - Create simple webpage to generate newsHist.csv lines from input.
 - Dynamically pull first news item into What's New page (news.html)
 - add/make sure a non-dynamic announcement section is present in news.html
