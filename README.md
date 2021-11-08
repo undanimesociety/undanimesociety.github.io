@@ -5,7 +5,7 @@ HOWTO:
 TODO:
 - Attempt update of jQuery to remove developer console warning.
   - If this does not work, find alternate request method to get csv files.
-  - Solution: 
+  - Possible solution: 
     - ```
       Deprecation Notice: The jqXHR.success(), jqXHR.error(), and jqXHR.complete() callbacks are removed as 
       of jQuery 3.0. You can use jqXHR.done(), jqXHR.fail(), and jqXHR.always() instead.
