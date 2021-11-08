@@ -348,7 +348,7 @@ var list=[],news=[],wrd="";
 //x is line, n is \n
 //stop after 2nd to last line is processed
 //build each news element, then add elements to list (top of the file will be the top of the webpage)
-for (var x=0,n=0;x < file.length&&n<2;x++){
+for (var x=0,n=0;x < file.length&&n<10;x++){
 	if(file[x]=='`'){
 		news.push(wrd);
 		wrd="";
@@ -358,7 +358,7 @@ for (var x=0,n=0;x < file.length&&n<2;x++){
 		list.push(news);
 		news=[];
 		wrd="";
-		n++;
+		//n++;
 	}
 	else if(file[x]=='|'){
 		wrd += "<br />";
@@ -367,7 +367,7 @@ for (var x=0,n=0;x < file.length&&n<2;x++){
 		wrd += file[x];
 	}
 }
-
+console.log(list);
 
 //start at 1 (0 is to appear on index.html)
 for (var x=1;x<list.length;x++){
