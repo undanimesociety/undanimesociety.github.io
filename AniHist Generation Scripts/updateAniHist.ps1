@@ -14,10 +14,10 @@ $anime3 = $anime3 -replace '  ','' -replace '^ ','' -replace ' $','' -replace ' 
 $anime4 = $anime4 -replace '  ','' -replace '^ ','' -replace ' $','' -replace ' ', '+'; Write-Progress -Activity "Reformatting Input" -PercentComplete 100;
 echo "Reformatted Input";
 Write-Progress -Activity "Receiving Results" -PercentComplete 0;
-$out1 = $client.DownloadString('https://www.animenewsnetwork.com/encyclopedia/search/name?q='+$anime1) -split '\r?\n' | Select-String -Pattern "anime <" | Select-String -Pattern "(TV)" | Select-Object -first 1; Write-Progress -Activity "Receiving Results" -PercentComplete 25;
-$out2 = $client.DownloadString('https://www.animenewsnetwork.com/encyclopedia/search/name?q='+$anime2) -split '\r?\n' | Select-String -Pattern "anime <" | Select-String -Pattern "(TV)" | Select-Object -first 1; Write-Progress -Activity "Receiving Results" -PercentComplete 50;
-$out3 = $client.DownloadString('https://www.animenewsnetwork.com/encyclopedia/search/name?q='+$anime3) -split '\r?\n' | Select-String -Pattern "anime <" | Select-String -Pattern "(TV)" | Select-Object -first 1; Write-Progress -Activity "Receiving Results" -PercentComplete 75;
-$out4 = $client.DownloadString('https://www.animenewsnetwork.com/encyclopedia/search/name?q='+$anime4) -split '\r?\n' | Select-String -Pattern "anime <" | Select-String -Pattern "(TV)" | Select-Object -first 1; Write-Progress -Activity "Receiving Results" -PercentComplete 100;
+$out1 = $client.DownloadString('https://www.animenewsnetwork.com/encyclopedia/search/name?q='+$anime1) -split '\r?\n' | Select-String -CaseSensitive -Pattern "anime <" | Select-String -Pattern "(TV)" | Select-Object -first 1; Write-Progress -Activity "Receiving Results" -PercentComplete 25;
+$out2 = $client.DownloadString('https://www.animenewsnetwork.com/encyclopedia/search/name?q='+$anime2) -split '\r?\n' | Select-String -CaseSensitive -Pattern "anime <" | Select-String -Pattern "(TV)" | Select-Object -first 1; Write-Progress -Activity "Receiving Results" -PercentComplete 50;
+$out3 = $client.DownloadString('https://www.animenewsnetwork.com/encyclopedia/search/name?q='+$anime3) -split '\r?\n' | Select-String -CaseSensitive -Pattern "anime <" | Select-String -Pattern "(TV)" | Select-Object -first 1; Write-Progress -Activity "Receiving Results" -PercentComplete 75;
+$out4 = $client.DownloadString('https://www.animenewsnetwork.com/encyclopedia/search/name?q='+$anime4) -split '\r?\n' | Select-String -CaseSensitive -Pattern "anime <" | Select-String -Pattern "(TV)" | Select-Object -first 1; Write-Progress -Activity "Receiving Results" -PercentComplete 100;
 echo "Received Results";
 $id1 = $out1 -replace '.*id=([0-9]+)".*','$1';
 $id2 = $out2 -replace '.*id=([0-9]+)".*','$1';
